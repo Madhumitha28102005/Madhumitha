@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <time.h>
+
+// Declare a structure for an employee
+struct Employee {
+    int id; // Employee ID
+    char name[50]; // Employee name
+    char designation[50]; // Employee designation
+    float salary; // Employee basic salary
+    char dateOfJoining[10]; // Employee date of joining (in DD/MM/YYYY format)
+    float enumeration; // Employee enumeration
+};
+
+int main() {
+    struct Employee emp;
+    int yearOfJoining, currentYear;
+    float experience;
+
+    // Assign values to the structure members
+    (link unavailable) = 101;
+    strcpy(emp.name, "John Doe");
+    strcpy(emp.designation, "Head of Accounts");
+    emp.salary = 50000.0;
+    strcpy(emp.dateOfJoining, "01/01/2018");
+
+    // Calculate the year of joining
+    sscanf(emp.dateOfJoining, "%d/%d/%d", &yearOfJoining, &currentYear, &currentYear);
+
+    // Calculate the experience
+    experience = (float)(2024 - yearOfJoining);
+
+    // Calculate the enumeration based on the designation and experience
+    if (strcmp(emp.designation, "Head of Accounts") == 0) {
+        if (experience > 5) {
+            emp.enumeration = emp.salary * 0.10;
+        } else if (experience >= 3 && experience <= 5) {
+            emp.enumeration = emp.salary * 0.05;
+        } else {
+            emp.enumeration = emp.salary * 0.02;
+        }
+    } else if (strcmp(emp.designation, "Clerk") == 0) {
+        if (experience > 5) {
+            emp.enumeration = emp.salary * 0.15;
+        } else if (experience >= 3 && experience <= 5) {
+            emp.enumeration = emp.salary * 0.10;
+        } else {
+            emp.enumeration = emp.salary * 0.05;
+        }
+    }
+
+    // Print the employee details
+    printf("Employee ID: %d\n", (link unavailable));
+    printf("Employee Name: %s\n", emp.name);
+    printf("Employee Designation: %s\n", emp.designation);
+    printf("Employee Basic Salary: %.2f\n", emp.salary);
+    printf("Employee Date of Joining: %s\n", emp.dateOfJoining);
+    printf("Employee Experience: %.2f years\n", experience);
+    printf("Employee Enumeration: %.2f\n", emp.enumeration);
+
+    return 0;
+}
